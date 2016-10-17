@@ -24,4 +24,10 @@ public class AddFractionTest {
         Fraction sum = new Fraction(0).plus(new Fraction(11));
         assertEquals(11, sum.intValue());
     }
+
+    @Test
+    public void positiveNonZeroPlusPositiveNonZero() throws Exception {
+        Fraction sum = new Fraction(4).plus(new Fraction(9));
+        assertEquals(13, sum.intValue());
+    }
 }
