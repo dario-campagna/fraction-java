@@ -7,8 +7,12 @@ public class Fraction {
         this.integerValue = integerValue;
     }
 
-    public Fraction plus(Fraction fraction) {
-        return this;
+    public Fraction plus(Fraction that) {
+        if (this.integerValue != 0) {
+            return this;
+        } else {
+            return that;
+        }
     }
 
     public int intValue() {
