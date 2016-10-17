@@ -1,5 +1,7 @@
 package it.esteco.math;
 
+import com.sun.javafx.binding.StringFormatter;
+
 public class Fraction {
     private final int numerator;
     private final int denominator;
@@ -9,8 +11,9 @@ public class Fraction {
     }
 
     public Fraction(int numerator, int denominator) {
-        this.numerator = numerator;
-        this.denominator = denominator;
+        int sign = denominator > 0 ? 1 : -1;
+        this.numerator = numerator * sign;
+        this.denominator = denominator * sign;
     }
 
     public Fraction plus(Fraction that) {
@@ -32,5 +35,24 @@ public class Fraction {
 
     public int getDenominator() {
         return this.denominator;
+    }
+
+    @Override
+    public String toString() {
+        return StringFormatter.format("%d/%d", this.numerator, this.denominator).getValue();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Fraction) {
+            Fraction that = (Fraction) obj;
+            return this.numerator == that.numerator && this.denominator == that.denominator;
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.numerator * 19 + this.denominator;
     }
 }
