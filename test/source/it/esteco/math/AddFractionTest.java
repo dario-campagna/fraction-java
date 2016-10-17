@@ -41,4 +41,11 @@ public class AddFractionTest {
     public void negativeInputsAndNegativeOutputs() throws Exception {
         assertEquals(-14, new Fraction(-6).plus(new Fraction(-8)).intValue());
     }
+
+    @Test
+    public void sameDenominators() throws Exception {
+        Fraction sum = new Fraction(1, 3).plus(new Fraction(4, 3));
+        assertEquals(5, sum.getNumerator());
+        assertEquals(3, sum.getDenominator());
+    }
 }
