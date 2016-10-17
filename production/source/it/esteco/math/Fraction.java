@@ -8,14 +8,10 @@ public class Fraction {
     }
 
     public Fraction plus(Fraction that) {
-        if (this.integerValue != 0) {
-            return new Fraction(this.integerValue + that.integerValue);
-        } else {
-            return that;
-        }
+        return new Fraction(this.integerValue + that.integerValue);
     }
 
     public int intValue() {
-        return integerValue;
+        return this.integerValue;
     }
 }
