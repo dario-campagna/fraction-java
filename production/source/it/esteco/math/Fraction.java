@@ -1,7 +1,7 @@
 package it.esteco.math;
 
 public class Fraction {
-    private final int integerValue;
+    private final int numerator;
     private final int denominator;
 
     public Fraction(int integerValue) {
@@ -9,20 +9,20 @@ public class Fraction {
     }
 
     public Fraction(int numerator, int denominator) {
-        this.integerValue = numerator;
+        this.numerator = numerator;
         this.denominator = denominator;
     }
 
     public Fraction plus(Fraction that) {
-        return new Fraction(this.integerValue + that.integerValue, this.denominator);
+        return new Fraction(this.numerator + that.numerator, this.denominator);
     }
 
     public int intValue() {
-        return this.integerValue;
+        return this.numerator;
     }
 
     public int getNumerator() {
-        return integerValue;
+        return this.numerator;
     }
 
     public int getDenominator() {
