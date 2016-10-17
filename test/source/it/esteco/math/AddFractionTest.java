@@ -9,43 +9,36 @@ public class AddFractionTest {
 
     @Test
     public void zeroPlusZero() throws Exception {
-        Fraction sum = new Fraction(0).plus(new Fraction(0));
-        assertEquals(0, sum.intValue());
+        assertEquals(0, new Fraction(0).plus(new Fraction(0)).intValue());
     }
 
     @Test
     public void nonZeroPlusZero() throws Exception {
-        Fraction sum = new Fraction(7).plus(new Fraction(0));
-        assertEquals(7, sum.intValue());
+        assertEquals(7, new Fraction(7).plus(new Fraction(0)).intValue());
     }
 
     @Test
     public void zeroPlusNonZero() throws Exception {
-        Fraction sum = new Fraction(0).plus(new Fraction(11));
-        assertEquals(11, sum.intValue());
+        assertEquals(11, new Fraction(0).plus(new Fraction(11)).intValue());
     }
 
     @Test
     public void nonNegativeNonZeroOperands() throws Exception {
-        Fraction sum = new Fraction(4).plus(new Fraction(9));
-        assertEquals(13, sum.intValue());
+        assertEquals(13, new Fraction(4).plus(new Fraction(9)).intValue());
     }
 
     @Test
     public void negativePlusPositiveNonZero() throws Exception {
-        Fraction sum = new Fraction(-2).plus(new Fraction(3));
-        assertEquals(1, sum.intValue());
+        assertEquals(1, new Fraction(-2).plus(new Fraction(3)).intValue());
     }
 
     @Test
     public void positiveNonZeroPlusNegative() throws Exception {
-        Fraction sum = new Fraction(5).plus(new Fraction(-1));
-        assertEquals(4, sum.intValue());
+        assertEquals(4, new Fraction(5).plus(new Fraction(-1)).intValue());
     }
 
     @Test
     public void negativeInputsAndNegativeOutputs() throws Exception {
-        Fraction sum = new Fraction(-6).plus(new Fraction(-8));
-        assertEquals(-14, sum.intValue());
+        assertEquals(-14, new Fraction(-6).plus(new Fraction(-8)).intValue());
     }
 }
