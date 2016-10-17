@@ -20,7 +20,7 @@ public class Fraction {
     }
 
     public int getNumerator() {
-        return 5;
+        return integerValue;
     }
 
     public int getDenominator() {
