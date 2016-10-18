@@ -12,14 +12,9 @@ public class Fraction {
 
     public Fraction(int numerator, int denominator) {
         int gcd = NumberTheory.gcd(numerator, denominator);
-        if (numerator % denominator == 0) {
-            this.numerator = numerator / denominator;
-            this.denominator = 1;
-        } else {
-            int sign = denominator > 0 ? 1 : -1;
-            this.numerator = numerator/gcd * sign;
-            this.denominator = denominator/gcd * sign;
-        }
+        int sign = denominator > 0 ? 1 : -1;
+        this.numerator = numerator / gcd * sign;
+        this.denominator = denominator / gcd * sign;
     }
 
     public Fraction plus(Fraction that) {
