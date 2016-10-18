@@ -20,4 +20,10 @@ public class ReduceFractionTest {
     public void reduceToLowestTerms() throws Exception {
         assertEquals(new Fraction(3, 2), new Fraction(6, 4));
     }
+
+    @Test
+    public void reduceWhenNegative() throws Exception {
+        assertEquals(new Fraction(-1, 2), new Fraction(4, -8));
+        assertEquals(new Fraction(1, 7), new Fraction(-2, -14));
+    }
 }
