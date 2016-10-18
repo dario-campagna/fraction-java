@@ -11,9 +11,14 @@ public class Fraction {
     }
 
     public Fraction(int numerator, int denominator) {
-        int sign = denominator > 0 ? 1 : -1;
-        this.numerator = numerator * sign;
-        this.denominator = denominator * sign;
+        if (numerator % denominator == 0) {
+            this.numerator = numerator / denominator;
+            this.denominator = 1;
+        } else {
+            int sign = denominator > 0 ? 1 : -1;
+            this.numerator = numerator * sign;
+            this.denominator = denominator * sign;
+        }
     }
 
     public Fraction plus(Fraction that) {
