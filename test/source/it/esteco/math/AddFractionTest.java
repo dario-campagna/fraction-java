@@ -45,6 +45,7 @@ public class AddFractionTest {
     @Test
     public void sameDenominators() throws Exception {
         assertEquals(new Fraction(5, 3), new Fraction(1, 3).plus(new Fraction(4, 3)));
+        assertEquals(new Fraction(4, 3), new Fraction(-1, 3).plus(new Fraction(5, 3)));
     }
 
     @Test
@@ -60,5 +61,17 @@ public class AddFractionTest {
     @Test
     public void negativesEverywhere() throws Exception {
         assertEquals(new Fraction(5, 63), new Fraction(1, -7).plus(new Fraction(-2, -9)));
+    }
+
+    @Test
+    public void sameDenominatorsWithReducedResult() throws Exception {
+        assertEquals(new Fraction(1, 3), new Fraction(1, 9).plus(new Fraction(2, 9)));
+        assertEquals(new Fraction(2), new Fraction(3, 4).plus(new Fraction(5, 4)));
+        assertEquals(new Fraction(-2,3), new Fraction(1, 6).plus(new Fraction(-5, 6)));
+    }
+
+    @Test
+    public void differentDenominatorsWithReducedResult() throws Exception {
+        assertEquals(new Fraction(1, 2), new Fraction(1, -4).plus(new Fraction(6, 8)));
     }
 }
