@@ -51,4 +51,9 @@ public class AddFractionTest {
     public void differentDenominators() throws Exception {
         assertEquals(new Fraction(7, 12), new Fraction(1, 3).plus(new Fraction(1, 4)));
     }
+
+    @Test
+    public void integerPlusFraction() throws Exception {
+        assertEquals(new Fraction(9, 4), new Fraction(2).plus(new Fraction(1, 4)));
+    }
 }
