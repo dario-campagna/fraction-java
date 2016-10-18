@@ -56,4 +56,9 @@ public class AddFractionTest {
     public void integerPlusFraction() throws Exception {
         assertEquals(new Fraction(9, 4), new Fraction(2).plus(new Fraction(1, 4)));
     }
+
+    @Test
+    public void negativesEverywhere() throws Exception {
+        assertEquals(new Fraction(5, 63), new Fraction(1, -7).plus(new Fraction(-2, -9)));
+    }
 }
