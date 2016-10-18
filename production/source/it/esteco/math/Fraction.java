@@ -25,18 +25,6 @@ public class Fraction {
         }
     }
 
-    public int intValue() {
-        return this.numerator;
-    }
-
-    public int getNumerator() {
-        return this.numerator;
-    }
-
-    public int getDenominator() {
-        return this.denominator;
-    }
-
     @Override
     public String toString() {
         return StringFormatter.format("%d/%d", this.numerator, this.denominator).getValue();
