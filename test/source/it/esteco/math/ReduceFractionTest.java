@@ -17,7 +17,6 @@ public class ReduceFractionTest {
     }
 
     @Test
-    @Ignore
     public void reduceToLowestTerms() throws Exception {
         assertEquals(new Fraction(3, 2), new Fraction(6, 4));
     }
