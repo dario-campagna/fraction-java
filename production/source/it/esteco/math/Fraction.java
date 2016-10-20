@@ -48,9 +48,7 @@ public class Fraction {
     }
 
     public Fraction dividedBy(Fraction that) {
-        if (this.equals(new Fraction(0))) {
-            return new Fraction(0);
-        } else if (that.equals(new Fraction(1))) {
+        if (this.equals(new Fraction(0)) || that.equals(new Fraction(1))) {
             return this;
         } else {
             return new Fraction(this.numerator, that.numerator);
