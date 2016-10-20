@@ -24,4 +24,9 @@ public class MultiplyFractionTest {
         assertEquals(new Fraction(5), new Fraction(1).times(new Fraction(5)));
         assertEquals(new Fraction(1, 4), new Fraction(1).times(new Fraction(1, 4)));
     }
+
+    @Test
+    public void multiplyFractionNoReduction() throws Exception {
+        assertEquals(new Fraction(1, 40), new Fraction(1, 5).times(new Fraction(1, 8)));
+    }
 }
