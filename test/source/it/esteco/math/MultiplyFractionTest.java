@@ -35,4 +35,10 @@ public class MultiplyFractionTest {
     public void multiplyFractionsWithReduction() throws Exception {
         assertEquals(new Fraction(7, 12), new Fraction(2, 3).times(new Fraction(7, 8)));
     }
+
+    @Test
+    public void multiplyNegativesFractions() throws Exception {
+        assertEquals(new Fraction(-5, 64), new Fraction(-1, 8).times(new Fraction(5, 8)));
+        assertEquals(new Fraction(3, 10), new Fraction(-2, 5).times(new Fraction(-3, 4)));
+    }
 }
