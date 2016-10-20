@@ -22,6 +22,16 @@ public class Fraction {
                 this.denominator * that.denominator);
     }
 
+    public Fraction times(Fraction that) {
+        if (that.equals(new Fraction(1))) {
+            return this;
+        } else if (this.equals(new Fraction(1))) {
+            return that;
+        } else {
+            return new Fraction(0);
+        }
+    }
+
     @Override
     public String toString() {
         return StringFormatter.format("%d/%d", this.numerator, this.denominator).getValue();
@@ -39,13 +49,5 @@ public class Fraction {
     @Override
     public int hashCode() {
         return this.numerator * 19 + this.denominator;
-    }
-
-    public Fraction times(Fraction that) {
-        if (that.equals(new Fraction(1))) {
-            return this;
-        } else {
-            return new Fraction(0);
-        }
     }
 }

@@ -14,9 +14,13 @@ public class MultiplyFractionTest {
     }
 
     @Test
-    public void multiplyFractionByOne() throws Exception {
+    public void multiplyNonZeroByOne() throws Exception {
         assertEquals(new Fraction(-4), new Fraction(-4).times(new Fraction(1)));
         assertEquals(new Fraction(6, 5), new Fraction(6, 5).times(new Fraction(1)));
     }
 
+    @Test
+    public void multuplyOneByNonZero() throws Exception {
+        assertEquals(new Fraction(5), new Fraction(1).times(new Fraction(5)));
+    }
 }
