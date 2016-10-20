@@ -34,4 +34,9 @@ public class DivideFractionTest {
         assertEquals(new Fraction(-3, 80), new Fraction(-1, 5).dividedBy(new Fraction(16, 3)));
         assertEquals(new Fraction(11, 49), new Fraction(-1, 7).dividedBy(new Fraction(7, -11)));
     }
+
+    @Test(expected = ArithmeticException.class)
+    public void divisionByZero() throws Exception {
+        new Fraction(12).dividedBy(new Fraction(0));
+    }
 }
