@@ -29,13 +29,7 @@ public class Fraction {
     }
 
     public Fraction dividedBy(Fraction that) {
-        if (this.equals(new Fraction(0)) || that.equals(new Fraction(1))) {
-            return this;
-        } else if (this.denominator != 1 || that.denominator != 1) {
-            return this.times(that.reciprocalOf());
-        } else {
-            return new Fraction(this.numerator, that.numerator);
-        }
+        return this.times(that.reciprocalOf());
     }
 
     public Fraction reciprocalOf() {
