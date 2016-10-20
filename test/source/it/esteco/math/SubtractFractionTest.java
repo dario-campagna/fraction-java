@@ -21,4 +21,9 @@ public class SubtractFractionTest {
         assertEquals(new Fraction(-1), new Fraction(0).minus(new Fraction(1)));
         assertEquals(new Fraction(2), new Fraction(0).minus(new Fraction(-2)));
     }
+
+    @Test
+    public void subtractNonZeroPositiveIntegers() throws Exception {
+        assertEquals(new Fraction(3), new Fraction(4).minus(new Fraction(1)));
+    }
 }
