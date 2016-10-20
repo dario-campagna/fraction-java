@@ -15,4 +15,10 @@ public class SubtractFractionTest {
     public void nonZeroMinusZero() throws Exception {
         assertEquals(new Fraction(15), new Fraction(15).minus(new Fraction(0)));
     }
+
+    @Test
+    public void zeroMinusNonZero() throws Exception {
+        assertEquals(new Fraction(-1), new Fraction(0).minus(new Fraction(1)));
+        assertEquals(new Fraction(2), new Fraction(0).minus(new Fraction(-2)));
+    }
 }

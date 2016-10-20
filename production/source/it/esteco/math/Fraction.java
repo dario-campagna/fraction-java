@@ -44,6 +44,10 @@ public class Fraction {
     }
 
     public Fraction minus(Fraction that) {
-        return this;
+        if (that.equals(new Fraction(0))) {
+            return this;
+        } else {
+            return new Fraction(-1).times(that);
+        }
     }
 }
