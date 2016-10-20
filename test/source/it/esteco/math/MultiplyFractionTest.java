@@ -1,44 +1,48 @@
 package it.esteco.math;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+
+import java.util.Arrays;
+import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
 
+@RunWith(Parameterized.class)
 public class MultiplyFractionTest {
 
-    @Test
-    public void multiplyByZero() throws Exception {
-        assertEquals(new Fraction(0), new Fraction(0).times(new Fraction(0)));
-        assertEquals(new Fraction(0), new Fraction(1).times(new Fraction(0)));
-        assertEquals(new Fraction(0), new Fraction(0).times(new Fraction(3, 7)));
+    private final Fraction expected;
+    private final Fraction multiplicand;
+    private final Fraction multiplier;
+
+    public MultiplyFractionTest(Fraction expected, Fraction multiplicand, Fraction multiplier) {
+        this.expected = expected;
+        this.multiplicand = multiplicand;
+        this.multiplier = multiplier;
+    }
+
+    @Parameterized.Parameters
+    public static Collection<Fraction[]> generateData() {
+        return Arrays.asList(new Fraction[][]{
+                {new Fraction(0), new Fraction(0), new Fraction(0)},
+                {new Fraction(0), new Fraction(1), new Fraction(0)},
+                {new Fraction(0), new Fraction(0), new Fraction(3, 7)},
+                {new Fraction(-4), new Fraction(-4), new Fraction(1)},
+                {new Fraction(6, 5), new Fraction(6, 5), new Fraction(1)},
+                {new Fraction(5), new Fraction(1), new Fraction(5)},
+                {new Fraction(1, 4), new Fraction(1), new Fraction(1, 4)},
+                {new Fraction(1, 40), new Fraction(1, 5), new Fraction(1, 8)},
+                {new Fraction(3, 20), new Fraction(3, 5), new Fraction(1, 4)},
+                {new Fraction(7, 12), new Fraction(2, 3), new Fraction(7, 8)},
+                {new Fraction(-5, 64), new Fraction(-1, 8), new Fraction(5, 8)},
+                {new Fraction(3, 10), new Fraction(-2, 5), new Fraction(-3, 4)},
+        });
     }
 
     @Test
-    public void multiplyNonZeroByOne() throws Exception {
-        assertEquals(new Fraction(-4), new Fraction(-4).times(new Fraction(1)));
-        assertEquals(new Fraction(6, 5), new Fraction(6, 5).times(new Fraction(1)));
+    public void multiplyFractions() {
+        assertEquals(expected, multiplicand.times(multiplier));
     }
 
-    @Test
-    public void multiplyOneByNonZero() throws Exception {
-        assertEquals(new Fraction(5), new Fraction(1).times(new Fraction(5)));
-        assertEquals(new Fraction(1, 4), new Fraction(1).times(new Fraction(1, 4)));
-    }
-
-    @Test
-    public void multiplyFractionsNoReduction() throws Exception {
-        assertEquals(new Fraction(1, 40), new Fraction(1, 5).times(new Fraction(1, 8)));
-        assertEquals(new Fraction(3, 20), new Fraction(3, 5).times(new Fraction(1, 4)));
-    }
-
-    @Test
-    public void multiplyFractionsWithReduction() throws Exception {
-        assertEquals(new Fraction(7, 12), new Fraction(2, 3).times(new Fraction(7, 8)));
-    }
-
-    @Test
-    public void multiplyNegativesFractions() throws Exception {
-        assertEquals(new Fraction(-5, 64), new Fraction(-1, 8).times(new Fraction(5, 8)));
-        assertEquals(new Fraction(3, 10), new Fraction(-2, 5).times(new Fraction(-3, 4)));
-    }
 }
