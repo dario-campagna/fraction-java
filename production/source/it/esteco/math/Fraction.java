@@ -24,6 +24,10 @@ public class Fraction {
         return new Fraction(this.numerator * that.numerator, this.denominator * that.denominator);
     }
 
+    public Fraction minus(Fraction that) {
+        return this.plus(new Fraction(-1).times(that));
+    }
+
     @Override
     public String toString() {
         return String.format("%d/%d", this.numerator, this.denominator);
@@ -41,9 +45,5 @@ public class Fraction {
     @Override
     public int hashCode() {
         return this.numerator * 19 + this.denominator;
-    }
-
-    public Fraction minus(Fraction that) {
-        return this.plus(new Fraction(-1).times(that));
     }
 }
