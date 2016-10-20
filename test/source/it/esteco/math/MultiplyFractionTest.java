@@ -26,7 +26,13 @@ public class MultiplyFractionTest {
     }
 
     @Test
-    public void multiplyFractionNoReduction() throws Exception {
+    public void multiplyFractionsNoReduction() throws Exception {
         assertEquals(new Fraction(1, 40), new Fraction(1, 5).times(new Fraction(1, 8)));
+        assertEquals(new Fraction(3, 20), new Fraction(3, 5).times(new Fraction(1, 4)));
+    }
+
+    @Test
+    public void multiplyFractionsWithReduction() throws Exception {
+        assertEquals(new Fraction(7, 12), new Fraction(2, 3).times(new Fraction(7, 8)));
     }
 }
