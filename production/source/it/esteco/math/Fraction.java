@@ -43,7 +43,7 @@ public class Fraction {
         return this.numerator * 19 + this.denominator;
     }
 
-    public Fraction minus(Fraction fraction) {
-        return new Fraction(0);
+    public Fraction minus(Fraction that) {
+        return this;
     }
 }
