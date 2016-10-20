@@ -1,7 +1,5 @@
 package it.esteco.math;
 
-import com.sun.javafx.binding.StringFormatter;
-
 public class Fraction {
     private final int numerator;
     private final int denominator;
@@ -28,7 +26,7 @@ public class Fraction {
 
     @Override
     public String toString() {
-        return StringFormatter.format("%d/%d", this.numerator, this.denominator).getValue();
+        return String.format("%d/%d", this.numerator, this.denominator);
     }
 
     @Override
