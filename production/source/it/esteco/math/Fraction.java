@@ -54,4 +54,8 @@ public class Fraction {
             return new Fraction(this.numerator, that.numerator);
         }
     }
+
+    public Fraction reciprocalOf() {
+        return new Fraction(this.denominator, this.numerator);
+    }
 }
