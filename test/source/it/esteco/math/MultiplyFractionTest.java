@@ -36,7 +36,7 @@ public class MultiplyFractionTest {
                 {new Fraction(3, 20), new Fraction(3, 5), new Fraction(1, 4)},
                 {new Fraction(7, 12), new Fraction(2, 3), new Fraction(7, 8)},
                 {new Fraction(-5, 64), new Fraction(-1, 8), new Fraction(5, 8)},
-                {new Fraction(3, 10), new Fraction(-2, 5), new Fraction(-3, 4)},
+                {new Fraction(3, 10), new Fraction(-2, 5), new Fraction(-3, 4)}
         });
     }
 
