@@ -42,7 +42,7 @@ public class MultiplyFractionTest {
 
     @Test
     public void multiplyFractions() {
-        assertEquals(expected, multiplicand.times(multiplier));
+        assertEquals(expected, multiplier.times(multiplicand));
     }
 
 }

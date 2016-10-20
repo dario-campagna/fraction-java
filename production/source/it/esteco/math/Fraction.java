@@ -28,6 +28,24 @@ public class Fraction {
         return this.plus(new Fraction(-1).times(that));
     }
 
+    public Fraction dividedBy(Fraction that) {
+        if (this.equals(new Fraction(0)) || that.equals(new Fraction(1))) {
+            return this;
+        } else if (this.denominator != 1 || that.denominator != 1) {
+            return this.times(that.reciprocalOf());
+        } else {
+            return new Fraction(this.numerator, that.numerator);
+        }
+    }
+
+    public Fraction reciprocalOf() {
+        if (this.equals(new Fraction(0))) {
+            throw new ArithmeticException();
+        } else {
+            return new Fraction(this.denominator, this.numerator);
+        }
+    }
+
     @Override
     public String toString() {
         return String.format("%d/%d", this.numerator, this.denominator);
@@ -45,21 +63,5 @@ public class Fraction {
     @Override
     public int hashCode() {
         return this.numerator * 19 + this.denominator;
-    }
-
-    public Fraction dividedBy(Fraction that) {
-        if (this.equals(new Fraction(0)) || that.equals(new Fraction(1))) {
-            return this;
-        } else {
-            return new Fraction(this.numerator, that.numerator);
-        }
-    }
-
-    public Fraction reciprocalOf() {
-        if (this.equals(new Fraction(0))) {
-            throw new ArithmeticException();
-        } else {
-            return new Fraction(this.denominator, this.numerator);
-        }
     }
 }
