@@ -48,6 +48,10 @@ public class Fraction {
     }
 
     public Fraction dividedBy(Fraction that) {
-        return new Fraction(0);
+        if (this.equals(new Fraction(0))) {
+            return new Fraction(0);
+        } else {
+            return this;
+        }
     }
 }
