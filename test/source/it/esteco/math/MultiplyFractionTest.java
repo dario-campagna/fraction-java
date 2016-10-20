@@ -20,7 +20,8 @@ public class MultiplyFractionTest {
     }
 
     @Test
-    public void multuplyOneByNonZero() throws Exception {
+    public void multiplyOneByNonZero() throws Exception {
         assertEquals(new Fraction(5), new Fraction(1).times(new Fraction(5)));
+        assertEquals(new Fraction(1, 4), new Fraction(1).times(new Fraction(1, 4)));
     }
 }

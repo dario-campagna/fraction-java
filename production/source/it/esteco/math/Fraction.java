@@ -23,13 +23,7 @@ public class Fraction {
     }
 
     public Fraction times(Fraction that) {
-        if (that.equals(new Fraction(1))) {
-            return this;
-        } else if (this.equals(new Fraction(1))) {
-            return that;
-        } else {
-            return new Fraction(0);
-        }
+        return new Fraction(this.numerator * that.numerator, this.denominator * that.denominator);
     }
 
     @Override
