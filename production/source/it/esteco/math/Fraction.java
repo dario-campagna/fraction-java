@@ -56,6 +56,10 @@ public class Fraction {
     }
 
     public Fraction reciprocalOf() {
-        return new Fraction(this.denominator, this.numerator);
+        if (this.equals(new Fraction(0))) {
+            throw new ArithmeticException();
+        } else {
+            return new Fraction(this.denominator, this.numerator);
+        }
     }
 }
