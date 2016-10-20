@@ -46,4 +46,8 @@ public class Fraction {
     public int hashCode() {
         return this.numerator * 19 + this.denominator;
     }
+
+    public Fraction dividedBy(Fraction that) {
+        return new Fraction(0);
+    }
 }
