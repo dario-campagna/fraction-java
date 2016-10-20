@@ -13,13 +13,13 @@ import static org.junit.Assert.assertEquals;
 public class MultiplyFractionTest {
 
     private final Fraction expected;
-    private final Fraction multiplicand;
     private final Fraction multiplier;
+    private final Fraction multiplicand;
 
-    public MultiplyFractionTest(Fraction expected, Fraction multiplicand, Fraction multiplier) {
+    public MultiplyFractionTest(Fraction expected, Fraction multiplier, Fraction multiplicand) {
         this.expected = expected;
-        this.multiplicand = multiplicand;
         this.multiplier = multiplier;
+        this.multiplicand = multiplicand;
     }
 
     @Parameterized.Parameters
